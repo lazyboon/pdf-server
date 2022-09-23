@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  pdf:
+    container_name: pdf
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "17000:8080"
+    tty: true
+    networks:
+      - mynet
+
+networks:
+  mynet:
+    driver: bridge
